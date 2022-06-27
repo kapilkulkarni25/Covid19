@@ -19,7 +19,7 @@
 }
 
 .countries-tab label.selected {
-  background-color: greenyellow;
+  background-color: gray;
 }
 
 input {
