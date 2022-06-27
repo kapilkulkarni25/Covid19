@@ -109,9 +109,9 @@ function generateCountry(countries) {
     checkbox.type = "checkbox";
     checkbox.classList.add("countries")
     const rndInt = randomIntFromInterval(1, countries.length)
-    checkbox.name = `${countries[i + 17].Country}`
-    checkbox.value = `${countries[i + 17].Slug}`
-    div.innerHTML = `${countries[i + 17].Country}`
+    checkbox.name = `${countries[rndInt].Country}`
+    checkbox.value = `${countries[rndInt].Slug}`
+    div.innerHTML = `${countries[rndInt].Country}`
     div.append(checkbox)
     fragment.append(div);
   }
@@ -153,10 +153,12 @@ function generateGraph(countryData, selectedCountries, countrData) {
   let countryLabels = [];
 
   countrData.forEach(ele => {
-    countryLabels.unshift(ele[ele.length - 1].Country)
-    chartDataConfirmed.unshift(ele[ele.length - 1].Confirmed)
-    chartDataDeaths.unshift(ele[ele.length - 1].Deaths)
-    chartDataActive.unshift(ele[ele.length - 1].Active)
+    if (ele.length > 1) {
+      countryLabels.unshift(ele[ele.length - 1].Country)
+      chartDataConfirmed.unshift(ele[ele.length - 1].Confirmed)
+      chartDataDeaths.unshift(ele[ele.length - 1].Deaths)
+      chartDataActive.unshift(ele[ele.length - 1].Active)
+    }
   })
 
   chart.updateOptions({
