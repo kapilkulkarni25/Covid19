@@ -1,0 +1,32 @@
+.chart-conatiner {
+  max-width: 100vw;
+  display: block;
+  margin: 10px auto;
+  height: 90vh;
+}
+
+.countries-tab {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.countries-tab label {
+  background-color: lightgray;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.countries-tab label.selected {
+  background-color: greenyellow;
+}
+
+input {
+  visibility: hidden;
+  position: absolute;
+}
+
+.chart-conatiner {
+  display: none;
+}
