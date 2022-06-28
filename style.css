@@ -2,9 +2,14 @@
   max-width: 100vw;
   display: block;
   margin: 10px auto;
-  height: 90vh;
+  height: 80vh;
+  background-color: lightgray;
+  padding: 1rem;
 }
 
+#chart {
+  background-color: #fff;
+}
 .countries-tab {
   display: flex;
   justify-content: center;
@@ -20,6 +25,7 @@
 
 .countries-tab label.selected {
   background-color: gray;
+  color: white;
 }
 
 input {
@@ -29,4 +35,10 @@ input {
 
 .chart-conatiner {
   display: none;
+}
+
+@media screen and (max-width: 390px) {
+  .chart-conatiner {
+    height: 70vh;
+  }
 }
