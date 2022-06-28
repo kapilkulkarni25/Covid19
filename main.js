@@ -26,7 +26,7 @@ var options = {
   },
   yaxis: {
     title: {
-      text: 'People'
+      text: 'No. of People'
     }
   },
   fill: {
@@ -91,7 +91,7 @@ function debounce(fn) {
 
     timer = setTimeout(() => {
       fn.apply(this, args);
-    }, 1000)
+    }, 300)
   }
 }
 
@@ -121,12 +121,12 @@ function generateCountry(countries) {
   let selectedCountries = [];
 
   for (let i = 0; i < tabCountries.length; i++) {
-    tabCountries[i].addEventListener("click", (e) => {
+    tabCountries[i].addEventListener("click", debounce((e) => {
       if (e.target.checked) {
         selectedCountries.push(e.target.value)
         document.querySelector(".chart-conatiner").style.display = "block"
         e.target.parentElement.classList.add("selected")
-        debounce(getCountryData(selectedCountries))
+          (getCountryData(selectedCountries))
       } else {
         selectedCountries = selectedCountries.filter(ele => e.target.value !== ele)
         e.target.parentElement.classList.remove("selected")
@@ -134,10 +134,10 @@ function generateCountry(countries) {
           document.querySelector(".chart-conatiner").style.display = "none"
           getCountryData([])
         } else {
-          debounce(getCountryData(selectedCountries))
+          (getCountryData(selectedCountries))
         }
       }
-    });
+    }));
   }
 }
 
