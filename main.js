@@ -126,7 +126,7 @@ function generateCountry(countries) {
         selectedCountries.push(e.target.value)
         document.querySelector(".chart-conatiner").style.display = "block"
         e.target.parentElement.classList.add("selected")
-          (getCountryData(selectedCountries))
+        getCountryData(selectedCountries)
       } else {
         selectedCountries = selectedCountries.filter(ele => e.target.value !== ele)
         e.target.parentElement.classList.remove("selected")
@@ -134,7 +134,7 @@ function generateCountry(countries) {
           document.querySelector(".chart-conatiner").style.display = "none"
           getCountryData([])
         } else {
-          (getCountryData(selectedCountries))
+          getCountryData(selectedCountries)
         }
       }
     }));
