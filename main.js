@@ -121,7 +121,7 @@ function generateCountry(countries) {
   let selectedCountries = [];
 
   for (let i = 0; i < tabCountries.length; i++) {
-    tabCountries[i].addEventListener("click", (e) => {
+    tabCountries[i].addEventListener("click", debounce((e) => {
       if (e.target.checked) {
         selectedCountries.push(e.target.value)
         document.querySelector(".chart-conatiner").style.display = "block"
@@ -137,7 +137,7 @@ function generateCountry(countries) {
           getCountryData(selectedCountries)
         }
       }
-    });
+    }));
   }
 }
 
