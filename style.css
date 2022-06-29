@@ -44,7 +44,3 @@ input {
   }
 }
 
-.countries-tab label:hover {
-  background: gray;
-  color: white;
-}
